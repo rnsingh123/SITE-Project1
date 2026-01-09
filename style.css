@@ -8,3 +8,29 @@ h1 {
     color:rgb(0,0,200);
     text-align:center;
 }
+
+.product {
+    width: 260px;
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+/* DEBUG TOOL
+* {
+    outline: 1px solid hotpink;
+}
+*/
+
