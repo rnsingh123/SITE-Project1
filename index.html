@@ -22,7 +22,13 @@
 <div class="top-actions">
     <button class="icon-btn" aria-label="Notifications">Notifications🔔</button>
     <button class="icon-btn" aria-label="Cart">Carts🛒</button>
-    <button class="icon-btn" aria-label="Settings">Settings⚙️</button>
+    <button
+  class="icon-btn"
+  id="settingsBtn"
+  onclick="toggleSettings()">
+  Settings⚙️
+</button>
+
 </div>
 
 <div class="hero">
@@ -40,9 +46,10 @@
 </section>
 
 <section class="products-section">
-    <h2>                 </h2>
+    <h2>Featured Products</h2>
 
     <div class="products">
+
         <div class="product">
             <img src="assets/guitars.jpg" alt="Fender OG">
             <h3>Fender OG</h3>
@@ -56,22 +63,24 @@
             <p>$49.99</p>
             <button>Add to Cart</button>
         </div>
+
         <div class="product">
             <img src="assets/watches.jpg" alt="Casio Edifice">
             <h3>CASIO <em>Edifice</em></h3>
             <p>$19.99</p>
             <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="assets/shoes.jpg" alt="NIKE AIR JORDAN">
+            <h3>NIKE AIR JORDAN<br><em>(ICE BLUE)</em></h3>
+            <p>$39.99</p>
+            <button>Add to Cart</button>
+        </div>
+
     </div>
-
-    <div class="product">
-        <img src="assets/shoes.jpg" alt="NIKE AIR JORDAN">
-        <h3>NIKE AIR JORDAN<br><em>(ICE BLUE)</em></h3>
-        <p>$39.99</p>
-        <button>Add to Cart</button>
-
-    </div>    
-
 </section>
+
 
 <section class="partners">
     <p class="partners-title">Our Partner Companies:</p>
@@ -80,14 +89,28 @@
         <img src="assets/adidas.jpg" alt="Adidas">
         <img src="assets/puma.jpg" alt="Puma">
         <img src="assets/reebok.jpg" alt="Reebok">
-        <!-- Partner logos will go here -->
+        
     </div>
 </section>
 
 <footer class="site-footer">
-    <p>&copy;2026 visionengine.LTD</p>
-    <p>Build With ❤️ By VISIONENGINE</p>
+    <p>&copy;2026 <em>Vision_Engine Ltd.</em></p>
+    <p>Build With ❤️ By Vision_Engine
+    </p>
 </footer>
+
+<!-- SETTINGS IFRAME PANEL -->
+<div class="settings-frame-wrapper">
+
+    <iframe 
+        src="settings.html" 
+        class="settings-frame"
+        title="Settings Panel">
+    </iframe>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
