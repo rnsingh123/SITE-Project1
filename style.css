@@ -1,10 +1,18 @@
 body {
-    font-family:'arial, sans-serif';
+    
     margin:0;
-    padding:0;
+    padding: 0 80px;
     text-align: center;
-    background-color: #f7f1e3;
+    background-color: #f6f6f6;
     color: #322e2a;
+    
+    padding-top: 72px; /* Adjust based on header height */
+    
+
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+
+
 }
 
 
@@ -26,6 +34,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 /* DEBUG TOOL
 * {
@@ -37,16 +46,26 @@ body {
 }
 
 .product p {
-    font-weight: 600%;
+    font-weight: 600;
 }
 .logo {
-    color: red;
-    font-weight: 700;
-    font-family: "inter", serif;
-    font-size: 24px;
-    letter-spacing: 0.5px;
+   font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -1px; /* ✅ fixed */
+  margin: 0;
+  color: #111;
+  line-height: 1;
 
     
+}
+
+.logo span {
+    color: #ff3b30;
+}
+
+body.dark .logo {
+    color: #f8fafc;
 }
 .logo-link {
     text-decoration: none;
@@ -61,13 +80,6 @@ body {
     left: 16px;
     padding: 0;
     background: transparent;
-
-    
-    
-
-    
-    
-    
     
     z-index: 1000;
    /*   border: 3px solid red;
@@ -75,20 +87,13 @@ body {
 }
 
 
-body {
-    padding-top: 72px; /* Adjust based on header height */
-    margin: 0;
 
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-
-
-}
 
 /*body { 
     background: pink;   
 }*/
 .product:hover {
-    transform: translateY(-6px); transition: .25s;
+    transform: translateY(-6px);
 }
 
 .products-section {
@@ -215,31 +220,6 @@ body {
     border: none;
 }
 
-/* Settings page styling */
-.settings-page {
-    font-family: Inter, sans-serif;
-    padding: 30px;
-}
-
-.settings-group {
-    margin: 20px 0;
-}
-
-.settings-back-btn {
-    background: none;
-    border: none;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.settings-back-btn:hover {
-    opacity: 0.7;
-}
-
-
 
 /* Dark Mode */
 body.dark {
@@ -249,4 +229,162 @@ body.dark {
 
 body.dark a {
   color: #9ecbff;
+}
+
+body.settings-page{
+  padding: 60px 20px !important;
+  text-align: left !important;
+  background: linear-gradient(135deg, #f7f3ea, #f3f6fb) !important;
+  color: #111 !important;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Wrap my settings content in a card */
+.settings-card{
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+
+/* Title and description */
+.settings-title{
+  font-size: 34px;
+  font-weight: 800;
+  margin: 0;
+  color: #111;
+}
+
+.settings-desc{
+  margin-top: 10px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: rgba(0,0,0,0.6);
+}
+
+/* Back button polished */
+.settings-back-btn{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.2s ease;
+}
+
+.settings-back-btn:hover{
+  transform: translateY(-2px);
+}
+
+/* Each settings row */
+.settings-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 14px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,0.6);
+  transition: 0.2s ease;
+}
+
+.settings-group:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Text inside each setting */
+.settings-text h3{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+.settings-text p{
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: rgba(0,0,0,0.55);
+}
+
+/* Toggle Switch */
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 30px;
+  transition: 0.2s ease;
+}
+
+.slider::before{
+  content: "";
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.switch input:checked + .slider{
+  background: #ff3b30;
+}
+
+.switch input:checked + .slider::before{
+  transform: translateX(24px);
+}
+
+
+/* Dark mode for settings */
+body.settings-page.dark{
+  background: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+body.settings-page.dark .settings-card{
+  background: rgba(15, 23, 42, 0.75);
+}
+
+body.settings-page.dark .settings-title,
+body.settings-page.dark .settings-text h3{
+  color: #f8fafc;
+}
+
+body.settings-page.dark .settings-desc,
+body.settings-page.dark .settings-text p{
+  color: rgba(248,250,252,0.65);
+}
+
+body.settings-page.dark .settings-group{
+  background: rgba(255,255,255,0.06);
 }

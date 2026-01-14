@@ -9,45 +9,57 @@
 
 <body class="settings-page">
 
-    <button class="settings-back-btn" onclick="closeSettings()">
-     Back
-</button>
+  <button class="settings-back-btn" onclick="closeSettings()">← Back</button>
 
-
-    <h2>Settings  </h2>
-    <p>Adjust your preferences and account settings here.</p>
+  <div class="settings-card">
+    <h2 class="settings-title">Settings</h2>
+    <p class="settings-desc">Adjust your preferences and account settings here.</p>
 
     <div class="settings-group">
-        <label>
-            <input type="checkbox">
-            Enable Notifications
-        </label>
+      <div class="settings-text">
+        <h3>Enable Notifications</h3>
+        <p>Get alerts for orders, offers, and updates.</p>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
     </div>
 
     <div class="settings-group">
-        <label>
-            <input type="checkbox" id="darkMode">
-            Dark Mode
-        </label>
+      <div class="settings-text">
+        <h3>Dark Mode</h3>
+        <p>Switch to a darker theme for night browsing.</p>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="darkMode">
+        <span class="slider"></span>
+      </label>
     </div>
 
     <div class="settings-group">
-        <label>
-            <input type="checkbox">
-            Subscribe to Newsletter
-        </label>
+      <div class="settings-text">
+        <h3>Subscribe to Newsletter</h3>
+        <p>Receive weekly deals and product recommendations.</p>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
     </div>
+  </div>
 
-    
+  <script>
+    function closeSettings() {
+      window.parent.toggleSettings();
+    }
+  </script>
 
-    <script>
-function closeSettings() {
-    // call function in parent page
-    window.parent.toggleSettings();
-}
-</script>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
+</div>
 </body>
+
 </html>
