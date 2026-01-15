@@ -1,17 +1,17 @@
-// 1️⃣ Toggle settings panel (UI only)
+// 1️ Toggle settings panel (UI only)
 function toggleSettings() {
   const panel = document.querySelector(".settings-frame-wrapper");
   if (!panel) return;
   panel.classList.toggle("active");
 }
 
-// 2️⃣ Apply dark mode on page load (PARENT PAGE)
+// 2️ Apply dark mode on page load (PARENT PAGE)
 document.addEventListener("DOMContentLoaded", () => {
   const isDark = localStorage.getItem("darkMode") === "on";
   document.body.classList.toggle("dark", isDark);
 });
 
-// 3️⃣ Settings page logic
+// 3️  Settings page logic
 document.addEventListener("DOMContentLoaded", () => {
   const darkToggle = document.getElementById("darkMode");
   if (!darkToggle) return;
